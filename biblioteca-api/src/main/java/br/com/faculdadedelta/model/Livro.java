@@ -3,6 +3,7 @@ package br.com.faculdadedelta.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class Livro {
 	private Integer volume;
 
 	@NotNull(message = "A data é obrigatória!")
+	@Column(name = "data_publicacao")
 	private LocalDate dataPublicacao;
 
 	@NotNull(message = "O valor é obrigatório!")

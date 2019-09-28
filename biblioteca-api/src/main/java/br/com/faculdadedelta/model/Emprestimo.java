@@ -3,6 +3,7 @@ package br.com.faculdadedelta.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,11 +20,14 @@ public class Emprestimo {
 	private Long id;
 
 	@NotNull(message = "Data do emprestimo é obrigatória!")
+	@Column(name = "data_Emprestimo")
 	private LocalDate dataDoEmprestimo;
 
+	@Column(name = "data_Devolucao")
 	private LocalDate dataDaDevolucao;
 
 	@NotNull(message = "Valor do emprestimo é obrigatório!")
+	@Column(name = "valor_emprestimo")
 	private BigDecimal valorDoEmprestimo;
 
 	@ManyToOne
